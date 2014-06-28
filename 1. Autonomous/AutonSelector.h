@@ -197,12 +197,107 @@ int codeSelector()
 int batteryLife()
 {
 	//Calculate battery life by taking (mAH)/(mA)*0.7
+	bool selected4 = false;
+	LCDClear();
+	while (!selected4)
+	{
+		// This Code Controls How Autonomii are selected
+		displayLCDCenteredString(1, "Select")
+			if (nLCDButtons == 1)
+			{
+			waitForRelease();
+			count--;
+			if (count < 0)
+			{
+				count = BATTERY_INFO;
+			}
+			}
+		if (nLCDButtons == 4)
+		{
+			waitForRelease();
+			count++;
+			if (count > BATTERY_INFO)
+			{
+				count = 0;
+			}
+		}
+		if (nLCDButtons == 2)
+		{
+			waitForRelease();
+			picked = true;
+		}
 
+		// This tells our code what to run for certain autonomii
+		switch (count)
+		{
+			//This Code Runs an Autonomous
+		    case 0:
+		    {
+			    displayLCDCenteredString(0, "");
+			    break;
+		    }
+
+			    //This Code Runs an Autonomous
+		    case 1:
+		    {
+			    displayLCDCenteredString(0, "");
+			    break;
+		    }
+		}
+	}
 }
 
 int sensorInfo()
 {
 	// Display Sensor info
 	// 2 Pages
+	//Calculate battery life by taking (mAH)/(mA)*0.7
+	bool selected4 = false;
+	LCDClear();
+	while (!selected4)
+	{
+		// This Code Controls How Autonomii are selected
+		displayLCDCenteredString(1, "Select")
+			if (nLCDButtons == 1)
+			{
+			waitForRelease();
+			count--;
+			if (count < 0)
+			{
+				count = SENSOR_PAGES;
+			}
+			}
+		if (nLCDButtons == 4)
+		{
+			waitForRelease();
+			count++;
+			if (count > SENSOR_PAGES)
+			{
+				count = 0;
+			}
+		}
+		if (nLCDButtons == 2)
+		{
+			waitForRelease();
+			picked = true;
+		}
 
+		// This tells our code what to run for certain autonomii
+		switch (count)
+		{
+			//This Code Runs an Autonomous
+		    case 0:
+		    {
+			    displayLCDCenteredString(0, "");
+			    break;
+		    }
+
+			    //This Code Runs an Autonomous
+		    case 1:
+		    {
+			    displayLCDCenteredString(0, "");
+			    break;
+		    }
+		}
+	}
 }
